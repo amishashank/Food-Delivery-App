@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MyFoodZ</string>
+    <string-array name="city">
+        <item>Lucknow</item>
+        <item>Delhi</item>
+        <item>Prayagraj</item>
+        <item>Varanasi</item>
+        <item>Ujjain</item>
+        <item>Haridwar</item>
+        <item>Rishikesh</item>
+        <item>Noida</item>
+    </string-array>
 </resources>

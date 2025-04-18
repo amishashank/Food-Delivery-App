@@ -23,7 +23,7 @@ Button onboard_button;
 
         onboard_button.setOnClickListener(v -> {
             Intent intent = new Intent(OnBoardActivity.this, LoginActivity.class);
-            Toast.makeText(OnBoardActivity.this, "Hello from MainActivity", Toast.LENGTH_SHORT).show();
+            Toast.makeText(OnBoardActivity.this, "Hello from OnBoardActivity", Toast.LENGTH_SHORT).show();
             startActivity(intent);
         });
     }
