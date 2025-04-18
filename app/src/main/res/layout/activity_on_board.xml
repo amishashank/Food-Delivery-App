@@ -7,4 +7,44 @@
     android:layout_height="match_parent"
     tools:context=".OnBoardActivity">
 
+
+    <ImageView
+        android:id="@+id/onboard_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backkgroundstart1" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/onboard_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lato"
+        android:text="Enjoy Restaurant Quality Meals at Home"
+        android:textAlignment="center"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/onboard_image" />
+
+    <!-- Material Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/onboard_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        app:backgroundTint="?attr/colorPrimary"
+        app:cornerRadius="16dp"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/onboard_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
