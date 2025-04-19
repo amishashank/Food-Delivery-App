@@ -7,7 +7,7 @@
     android:padding="5dp"
     tools:context=".HomeActivity">
 
-    <!-- Header Layout -->
+    <!-- Header -->
     <LinearLayout
         android:id="@+id/header_layout"
         android:layout_width="0dp"
@@ -17,7 +17,8 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="8dp">
 
         <TextView
             android:id="@+id/home_head_text"
@@ -25,7 +26,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/courgette"
-            android:paddingEnd="10dp"
             android:text="Explore Your Favorite Food"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -39,15 +39,14 @@
             android:src="@drawable/bell" />
     </LinearLayout>
 
-    <!-- Carousel Layout -->
+    <!-- Carousel -->
     <LinearLayout
         android:id="@+id/carousel_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="16dp"
+        android:paddingHorizontal="16dp"
         android:paddingTop="8dp"
-        android:paddingEnd="16dp"
         app:layout_constraintTop_toBottomOf="@id/header_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -92,7 +91,7 @@
             android:textColor="@android:color/black" />
     </LinearLayout>
 
-    <!-- Menu RecyclerView -->
+    <!-- Menu List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_menu_rv"
         android:layout_width="0dp"
@@ -109,6 +108,7 @@
         android:id="@+id/home_fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/home_menu_rv"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,18 +119,19 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="8dp"
         android:background="#EEEEEE"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Home -->
+        <!-- Nav Buttons -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -138,8 +139,8 @@
                 android:id="@+id/nav_home_img"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/home"
-                android:contentDescription="Home" />
+                android:contentDescription="Home"
+                android:src="@drawable/home" />
 
             <TextView
                 android:id="@+id/nav_home_txt"
@@ -149,11 +150,11 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Search -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -161,22 +162,23 @@
                 android:id="@+id/nav_search_img"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/search"
-                android:contentDescription="Search" />
+                android:contentDescription="Search"
+                android:src="@drawable/search" />
 
             <TextView
                 android:id="@+id/nav_search_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Search"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
         </LinearLayout>
 
-        <!-- Cart -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -184,22 +186,23 @@
                 android:id="@+id/nav_cart_img"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/cart"
-                android:contentDescription="Cart" />
+                android:contentDescription="Cart"
+                android:src="@drawable/cart" />
 
             <TextView
                 android:id="@+id/nav_cart_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cart"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
         </LinearLayout>
 
-        <!-- Profile -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -207,16 +210,16 @@
                 android:id="@+id/nav_profile_img"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/profile"
-                android:contentDescription="Profile" />
+                android:contentDescription="Profile"
+                android:src="@drawable/profile" />
 
             <TextView
                 android:id="@+id/nav_profile_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
