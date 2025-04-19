@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+   <color name="bottom_nav_color_selector">
+       <selector xmlns:android="http://schemas.android.com/apk/res/android">
+           <item android:color="@color/#FFC0CB"
+               android:state_checked="true"/>
+           <item android:color="@android:color/	#5A5A5A"/>
+       </selector>
+   </color>
+
 </resources>

@@ -1,21 +1,21 @@
 package com.andro.myfoodz;
 
 public class MenuModel {
-    String menu_image;
+    int menu_image;
     String menu_name;
     String menu_price;
 
-    public MenuModel(String menu_image, String menu_name, String menu_price) {
+    public MenuModel(int menu_image, String menu_name, String menu_price) {
         this.menu_image = menu_image;
         this.menu_name = menu_name;
         this.menu_price = menu_price;
     }
 
-    public String getMenu_image() {
+    public int getMenu_image() {
         return menu_image;
     }
 
-    public void setMenu_image(String menu_image) {
+    public void setMenu_image(int menu_image) {
         this.menu_image = menu_image;
     }
 
