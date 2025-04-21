@@ -3,7 +3,9 @@ package com.andro.myfoodz;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -29,9 +31,12 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView home_menu_rv;
     private MenuAdapter menuAdapter;
     private List<MenuModel> menuList;
-    private ImageView menu_image;
-    private  TextView menu_name;
-    private TextView menu_price;
+
+    // Custom Bottom Navigation
+
+    LinearLayout bottom_nav_bar, nav_home_container, nav_search_container, nav_cart_container, nav_profile_container;
+    ImageView nav_home_img, nav_search_img, nav_cart_img, nav_profile_img;
+    TextView nav_home_txt, nav_search_txt, nav_cart_txt, nav_profile_txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +47,32 @@ public class HomeActivity extends AppCompatActivity {
         showcorousel();
         autoScroll();
         foodMenu();
+        bottomnavbar();
     }
 
+    private void bottomnavbar() {
+        bottom_nav_bar = findViewById(R.id.bottom_nav_bar);
+        nav_home_container = findViewById(R.id.nav_home_container);
+        nav_search_container = findViewById(R.id.nav_search_container);
+        nav_cart_container = findViewById(R.id.nav_cart_container);
+        nav_profile_container = findViewById(R.id.nav_profile_container);
+        nav_home_img = findViewById(R.id.nav_home_img);
+        nav_search_img = findViewById(R.id.nav_search_img);
+        nav_cart_img = findViewById(R.id.nav_cart_img);
+        nav_profile_img = findViewById(R.id.nav_profile_img);
+
+        nav_home_txt = findViewById(R.id.nav_home_txt);
+        nav_search_txt = findViewById(R.id.nav_search_txt);
+        nav_cart_txt = findViewById(R.id.nav_cart_txt);
+        nav_profile_txt = findViewById(R.id.nav_profile_txt);
+
+       
+
+    }
 
     // Carousel setup
     private void showcorousel() {
-        home_corosuel = findViewById(R.id.home_corosuel);
+        home_corosuel = findViewById(R.id.home_carousel);
         home_corosuel.setLayoutManager(
                 new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         );

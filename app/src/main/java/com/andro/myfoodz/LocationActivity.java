@@ -29,7 +29,7 @@ public class LocationActivity extends AppCompatActivity {
         // Set up the dropdown menu
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
-                R.array.city, // Make sure this exists in res/values/strings.xml
+                R.array.city, // res/values/strings.xml
                 android.R.layout.simple_dropdown_item_1line
         );
         location_menu.setAdapter(adapter);
