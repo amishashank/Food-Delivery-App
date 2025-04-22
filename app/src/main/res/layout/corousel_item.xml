@@ -15,4 +15,5 @@
         android:scaleType="fitXY"
         android:contentDescription="Promotional banner" />
 
+
 </androidx.cardview.widget.CardView>

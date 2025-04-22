@@ -32,6 +32,7 @@ public class CorouselAdapter extends RecyclerView.Adapter<CorouselAdapter.ViewHo
         holder.banner_imageView.setImageResource(model.getBannerimages());
 
 
+
     }
 
     @Override

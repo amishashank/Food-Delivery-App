@@ -2,7 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-   <color name="bottom_nav_color_selector">
+    <color name="primary">#FF5722</color> <!-- Or your app's main accent -->
+    <color name="gray">#9E9E9E</color>   <!-- Default icon color -->
+
+    <color name="bottom_nav_color_selector">
        <selector xmlns:android="http://schemas.android.com/apk/res/android">
            <item android:color="@color/#FFC0CB"
                android:state_checked="true"/>

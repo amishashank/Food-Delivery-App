@@ -14,10 +14,16 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
-    private final List<MenuModel> menuList;
+    private List<MenuModel> menuList;
+
 
     public MenuAdapter(List<MenuModel> menuList) {
         this.menuList = menuList;
+    }
+
+    public void filterList(List<MenuModel> filteredList) {
+        menuList = filteredList;
+        notifyDataSetChanged();
     }
 
     @NonNull
