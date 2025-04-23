@@ -1,3 +1,4 @@
+// MenuAdapter.java
 package com.andro.myfoodz;
 
 import android.view.LayoutInflater;
@@ -16,13 +17,12 @@ import java.util.List;
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     private List<MenuModel> menuList;
 
-
     public MenuAdapter(List<MenuModel> menuList) {
         this.menuList = menuList;
     }
 
     public void filterList(List<MenuModel> filteredList) {
-        menuList = filteredList;
+        this.menuList = filteredList;
         notifyDataSetChanged();
     }
 
@@ -38,6 +38,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         MenuModel menuModel = menuList.get(position);
         holder.menu_name.setText(menuModel.getMenu_name());
         holder.menu_price.setText("₹" + menuModel.getMenu_price());
+
         Glide.with(holder.itemView.getContext())
                 .load(menuModel.getMenu_image())
                 .placeholder(R.drawable.menu_pic2)
@@ -49,10 +50,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         return menuList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView menu_image;
-        TextView menu_name;
-        TextView menu_price;
+        TextView menu_name, menu_price;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
