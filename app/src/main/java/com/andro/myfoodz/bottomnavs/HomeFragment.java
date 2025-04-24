@@ -1,13 +1,16 @@
 package com.andro.myfoodz.bottomnavs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -16,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.andro.myfoodz.CorouselAdapter;
 import com.andro.myfoodz.CorouselModel;
+import com.andro.myfoodz.FoodDesc;
+import com.andro.myfoodz.FoodMenu;
 import com.andro.myfoodz.MenuAdapter;
 import com.andro.myfoodz.MenuModel;
 import com.andro.myfoodz.R;
@@ -24,7 +29,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-
+    FoodMenu foodMenu;
+private Button view_menu_button;
     // Carousel
     private RecyclerView home_corosuel;
     private CorouselAdapter corouselAdapter;
@@ -44,6 +50,13 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        view_menu_button = view.findViewById(R.id.view_menu_button);
+        view_menu_button.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), FoodDesc.class);
+                    Toast.makeText(getActivity(), "Coming Soon", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+                });
 
         showcorousel(view);
         setupDots(view, 9);
@@ -121,35 +134,12 @@ public class HomeFragment extends Fragment {
     private void foodMenu(View view) {
         home_menu_rv = view.findViewById(R.id.home_menu_rv);
         home_menu_rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        menuList = new ArrayList<>();
 
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Banana Asharfi", "550"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Chai-Infused Emperor's Green Rice", "600"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Satpura with Chole and Chutney", "450"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Company Baug Laddoo", "400"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Dal Bukhara", "700"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Paneer Tikka Masala", "600"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Tandoori Broccoli", "450"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Mushroom & Water Chestnut Dim Sum", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Gobi Manchurian", "550"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Hakka Noodles", "500"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Steamed Jasmine Rice", "300"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Black Pepper Tofu", "750"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Masala Chai", "200"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Classic Mango Lassi", "250"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Paneer Makhani", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Vegetable Spring Rolls", "400"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Schezwan Paneer", "550"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Stuffed Kulcha", "350"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Quinoa Upma", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Corn Bhajiya", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Baked Nachos with Guacamole", "700"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Rucola, Quinoa & Avocado Salad", "825"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Pizza Verdure", "900"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Paneer Tikka Pizza", "950"));
-
+        foodMenu = new FoodMenu();
+        menuList = foodMenu.menuList;
 
         menuAdapter = new MenuAdapter(menuList);
         home_menu_rv.setAdapter(menuAdapter);
     }
+
 }

@@ -5,11 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".bottomnavs.CartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:gravity="center_vertical"
+        android:text="Cart"
+        android:textSize="40dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="50dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="My Cart!!!"
-        android:textSize="50sp"
-        android:gravity="center"/>
+        android:layout_height="0dp"/>
+
 </FrameLayout>

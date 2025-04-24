@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="8dp"
+    android:padding="6dp"
+    tools:context=".FoodDesc">
+
+    <!-- Title -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/food_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/archivo_black"
+        android:text="Paneer Tikka Pizza"
+        android:textAlignment="center"
+        android:textColor="@color/primary"
+        android:textSize="35sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Image -->
+    <ImageView
+        android:id="@+id/food_image"
+        android:layout_width="0dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner10"
+        app:layout_constraintTop_toBottomOf="@id/food_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Description Label -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato"
+        android:text="Food Description"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/food_image"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Description Body -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/food_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lato"
+        android:text="Fusion food is the present... must try for all lovers of pizza, paneer and Indian flavors."
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Ingredients Label -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/ingred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato"
+        android:text="Ingredients"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/food_description"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Ingredients List -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/ingredients_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:minLines="4"
+        android:text="Wheat Pizza Base\nTomato and Tandoori Sauce\nPaneer\nand more"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="viewStart"
+        app:layout_constraintTop_toBottomOf="@id/ingred"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_to_cart_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:text="Add to Cart"
+        android:backgroundTint="#66BB6A"
+        android:fontFamily="@font/archivo_black"
+        app:layout_constraintTop_toBottomOf="@id/ingredients_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

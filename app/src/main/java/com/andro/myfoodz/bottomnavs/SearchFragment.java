@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.andro.myfoodz.FoodMenu;
 import com.andro.myfoodz.MenuAdapter;
 import com.andro.myfoodz.MenuModel;
 import com.andro.myfoodz.R;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFragment extends Fragment {
+    FoodMenu foodMenu;
     private RecyclerView recyclerView;
     private MenuAdapter adapter;
     private List<MenuModel> menuList;
@@ -40,36 +42,11 @@ public class SearchFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
 
-        // Dummy menu data
-        menuList = new ArrayList<>();
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Banana Asharfi", "550"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Chai-Infused Emperor's Green Rice", "600"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Satpura with Chole and Chutney", "450"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Company Baug Laddoo", "400"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Dal Bukhara", "700"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Paneer Tikka Masala", "600"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Tandoori Broccoli", "450"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Mushroom & Water Chestnut Dim Sum", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Gobi Manchurian", "550"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Hakka Noodles", "500"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Steamed Jasmine Rice", "300"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Black Pepper Tofu", "750"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Masala Chai", "200"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Classic Mango Lassi", "250"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Paneer Makhani", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Vegetable Spring Rolls", "400"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Schezwan Paneer", "550"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Stuffed Kulcha", "350"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Quinoa Upma", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Corn Bhajiya", "650"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Baked Nachos with Guacamole", "700"));
-        menuList.add(new MenuModel(R.drawable.menu_pic1, "Rucola, Quinoa & Avocado Salad", "825"));
-        menuList.add(new MenuModel(R.drawable.menu_pic, "Pizza Verdure", "900"));
-        menuList.add(new MenuModel(R.drawable.menu_pic2, "Paneer Tikka Pizza", "950"));
+        foodMenu = new FoodMenu();
+        menuList = foodMenu.menuList;  // FIX: assign the data to the class-level list
 
-        adapter = new MenuAdapter(menuList);
+        adapter = new MenuAdapter(menuList); // Now menuList isn't null
         recyclerView.setAdapter(adapter);
-
 
         searchBar.setOnClickListener(v -> searchView.show());
 
